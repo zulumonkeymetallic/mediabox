@@ -16,7 +16,7 @@ services:
   # COUCHPOTATO
   # ----------------------------------------
   couchpotato:
-    image: linuxserver/couchpotato
+    image: lscr.io/linuxserver/couchpotato
     container_name: couchpotato
     restart: unless-stopped
     network_mode: "bridge"
@@ -85,7 +85,7 @@ services:
   # DUPLICATI
   # ----------------------------------------
   duplicati:
-    image: linuxserver/duplicati
+    image: lscr.io/linuxserver/duplicati
     container_name: duplicati
     restart: unless-stopped
     network_mode: "bridge"
@@ -159,7 +159,7 @@ services:
   # HEADPHONES
   # ----------------------------------------
   headphones:
-    image: linuxserver/headphones
+    image: lscr.io/linuxserver/headphones
     container_name: headphones
     restart: unless-stopped
     network_mode: "bridge"
@@ -167,7 +167,7 @@ services:
         - '${IP_ADDRESS}:8282:8181'
     environment:
         - PUID=${PUID}
-        - PGID=${PGID}
+        - PGID=${PGID
         - TZ=${TZ}
     volumes:
         - './headphones:/config'
@@ -194,7 +194,7 @@ services:
   # JACKETT
   # ----------------------------------------
   jackett:
-    image: linuxserver/jackett
+    image: lscr.io/linuxserver/jackett
     container_name: jackett
     restart: unless-stopped
     network_mode: "bridge"
@@ -231,7 +231,7 @@ services:
   # LIDARR
   # ----------------------------------------
   lidarr:
-    image: linuxserver/lidarr
+    image: lscr.io/linuxserver/lidarr
     container_name: lidarr
     restart: unless-stopped
     network_mode: "bridge"
@@ -290,7 +290,7 @@ services:
   # MUXIMUX
   # ----------------------------------------
   muximux:
-    image: linuxserver/muximux
+    image: lscr.io/linuxserver/muximux
     container_name: muximux
     restart: unless-stopped
     network_mode: "bridge"
@@ -329,7 +329,7 @@ services:
   # NZBGet
   # ----------------------------------------
   nzbget:
-    image: linuxserver/nzbget
+    image: lscr.io/linuxserver/nzbget
     container_name: nzbget
     restart: unless-stopped
     environment:
@@ -347,7 +347,7 @@ services:
   # NZBHydra2
   # ----------------------------------------
   nzbhydra2:
-    image: linuxserver/nzbhydra2
+    image: lscr.io/linuxserver/nzbhydra2
     container_name: nzbhydra2
     restart: unless-stopped
     environment:
@@ -365,7 +365,7 @@ services:
   # OMBI
   # ----------------------------------------
   ombi:
-    image: linuxserver/ombi
+    image: lscr.io/linuxserver/ombi
     container_name: ombi
     restart: unless-stopped
     network_mode: "bridge"
@@ -382,7 +382,7 @@ services:
   # OVERSEERR
   # ----------------------------------------
   overseerr:
-    image: linuxserver/overseerr
+    image: lscr.io/linuxserver/overseerr
     container_name: overseerr
     restart: unless-stopped
     network_mode: "bridge"
@@ -453,7 +453,7 @@ services:
   # RADARR
   # ----------------------------------------
   radarr:
-    image: linuxserver/radarr
+    image: lscr.io/linuxserver/radarr
     container_name: radarr
     restart: unless-stopped
     network_mode: "bridge"
@@ -472,7 +472,7 @@ services:
   # REQUESTRR
   # ----------------------------------------
   requestrr:
-    image: linuxserver/requestrr
+    image: lscr.io/linuxserver/requestrr
     container_name: requestrr
     restart: unless-stopped
     network_mode: "bridge"
@@ -489,7 +489,7 @@ services:
   # SICKCHILL
   # ----------------------------------------
   sickchill:
-    image: linuxserver/sickchill
+    image: lscr.io/linuxserver/sickchill
     container_name: sickchill
     restart: unless-stopped
     network_mode: "bridge"
@@ -508,7 +508,7 @@ services:
   # SONARR
   # ----------------------------------------
   sonarr:
-    image: linuxserver/sonarr
+    image: lscr.io/linuxserver/sonarr
     container_name: sonarr
     restart: unless-stopped
     network_mode: "bridge"
@@ -546,7 +546,7 @@ services:
   # SQLITEBROWSER
   # ----------------------------------------
   sqlitebrowser:
-    image: linuxserver/sqlitebrowser
+    image: lscr.io/linuxserver/sqlitebrowser
     container_name: sqlitebrowser
     restart: unless-stopped
     network_mode: "bridge"
