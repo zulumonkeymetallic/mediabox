@@ -16,7 +16,7 @@ services:
   # COUCHPOTATO
   # ----------------------------------------
   couchpotato:
-    image: lscr.io/linuxserver/couchpotato
+    image: docker.io/linuxserver/couchpotato
     container_name: couchpotato
     restart: unless-stopped
     network_mode: "bridge"
@@ -85,7 +85,7 @@ services:
   # DUPLICATI
   # ----------------------------------------
   duplicati:
-    image: lscr.io/linuxserver/duplicati
+    image: docker.io/linuxserver/duplicati
     container_name: duplicati
     restart: unless-stopped
     network_mode: "bridge"
@@ -159,7 +159,7 @@ services:
   # HEADPHONES
   # ----------------------------------------
   headphones:
-    image: lscr.io/linuxserver/headphones
+    image: docker.io/linuxserver/headphones
     container_name: headphones
     restart: unless-stopped
     network_mode: "bridge"
@@ -194,7 +194,7 @@ services:
   # JACKETT
   # ----------------------------------------
   jackett:
-    image: lscr.io/linuxserver/jackett
+    image: docker.io/linuxserver/jackett
     container_name: jackett
     restart: unless-stopped
     network_mode: "bridge"
@@ -231,7 +231,7 @@ services:
   # LIDARR
   # ----------------------------------------
   lidarr:
-    image: lscr.io/linuxserver/lidarr
+    image: docker.io/linuxserver/lidarr
     container_name: lidarr
     restart: unless-stopped
     network_mode: "bridge"
@@ -290,7 +290,7 @@ services:
   # MUXIMUX
   # ----------------------------------------
   muximux:
-    image: lscr.io/linuxserver/muximux
+    image: docker.io/linuxserver/muximux
     container_name: muximux
     restart: unless-stopped
     network_mode: "bridge"
@@ -329,7 +329,7 @@ services:
   # NZBGet
   # ----------------------------------------
   nzbget:
-    image: lscr.io/linuxserver/nzbget
+    image: docker.io/linuxserver/nzbget
     container_name: nzbget
     restart: unless-stopped
     environment:
@@ -347,7 +347,7 @@ services:
   # NZBHydra2
   # ----------------------------------------
   nzbhydra2:
-    image: lscr.io/linuxserver/nzbhydra2
+    image: docker.io/linuxserver/nzbhydra2
     container_name: nzbhydra2
     restart: unless-stopped
     environment:
@@ -365,7 +365,7 @@ services:
   # OMBI
   # ----------------------------------------
   ombi:
-    image: lscr.io/linuxserver/ombi
+    image: docker.io/linuxserver/ombi
     container_name: ombi
     restart: unless-stopped
     network_mode: "bridge"
@@ -382,7 +382,7 @@ services:
   # OVERSEERR
   # ----------------------------------------
   overseerr:
-    image: lscr.io/linuxserver/overseerr
+    image: docker.io/linuxserver/overseerr
     container_name: overseerr
     restart: unless-stopped
     network_mode: "bridge"
@@ -453,7 +453,7 @@ services:
   # RADARR
   # ----------------------------------------
   radarr:
-    image: lscr.io/linuxserver/radarr
+    image: docker.io/linuxserver/radarr
     container_name: radarr
     restart: unless-stopped
     network_mode: "bridge"
@@ -472,7 +472,7 @@ services:
   # REQUESTRR
   # ----------------------------------------
   requestrr:
-    image: lscr.io/linuxserver/requestrr
+    image: docker.io/linuxserver/requestrr
     container_name: requestrr
     restart: unless-stopped
     network_mode: "bridge"
@@ -489,7 +489,7 @@ services:
   # SICKCHILL
   # ----------------------------------------
   sickchill:
-    image: lscr.io/linuxserver/sickchill
+    image: docker.io/linuxserver/sickchill
     container_name: sickchill
     restart: unless-stopped
     network_mode: "bridge"
@@ -508,7 +508,7 @@ services:
   # SONARR
   # ----------------------------------------
   sonarr:
-    image: lscr.io/linuxserver/sonarr
+    image: docker.io/linuxserver/sonarr
     container_name: sonarr
     restart: unless-stopped
     network_mode: "bridge"
@@ -546,7 +546,7 @@ services:
   # SQLITEBROWSER
   # ----------------------------------------
   sqlitebrowser:
-    image: lscr.io/linuxserver/sqlitebrowser
+    image: docker.io/linuxserver/sqlitebrowser
     container_name: sqlitebrowser
     restart: unless-stopped
     network_mode: "bridge"
