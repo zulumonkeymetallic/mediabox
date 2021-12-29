@@ -658,7 +658,7 @@ services:
   #       - PGID=${PGID}
 #
   # ----------------------------------------
-  # WATCHTOWER
+  # WATCHTOWERjd
   # ----------------------------------------
   watchtower:
     image: containrrr/watchtower
