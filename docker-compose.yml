@@ -1,6 +1,6 @@
 ##
 ## -------------------------
-## |   M E D I A B O X     |
+## |   M E D I A B O X  x   |
 ## -------------------------
 ##
 ##
@@ -167,7 +167,7 @@ services:
         - '${IP_ADDRESS}:8282:8181'
     environment:
         - PUID=${PUID}
-        - PGID=${PGID
+        - PGID=${PGID}
         - TZ=${TZ}
     volumes:
         - './headphones:/config'
@@ -642,23 +642,23 @@ services:
   # ----------------------------------------
   # TUBESYNC
   # ----------------------------------------
-  #tubesync:
-  #  image: ghcr.io/meeb/tubesync:latest
-  #  container_name: tubesync
-  #  restart: unless-stopped
-  #  network_mode: "bridge"
-  #  ports:
-  #       - '${IP_ADDRESS}:4848:4848'
-  #  volumes:
-  #       - './tubesync:/config'
-  #       - '${MISCDIR}:/downloads'
-  #  environment:
-  #       - TZ=${TZ}
-  #       - PUID=${PUID}
-  #       - PGID=${PGID}
-#
+  tubesync:
+    image: ghcr.io/meeb/tubesync:latest
+    container_name: tubesync
+    restart: unless-stopped
+    network_mode: "bridge"
+    ports:
+         - '${IP_ADDRESS}:4848:4848'
+    volumes:
+         - './tubesync:/config'
+         - '${MISCDIR}:/downloads'
+    environment:
+         - TZ=${TZ}
+         - PUID=${PUID}
+         - PGID=${PGID}
+
   # ----------------------------------------
-  # WATCHTOWERjd
+  # WATCHTOWER
   # ----------------------------------------
   watchtower:
     image: containrrr/watchtower
