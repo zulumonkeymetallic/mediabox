@@ -85,7 +85,7 @@ Install the prerequisite packages:
 
 Add the current user to the docker group:
 
-`$ sudo usermod -aG docker $USER`
+  `$ sudo usermod -aG docker $USER`
 
 Adjustments for the the DelugeVPN container
 
