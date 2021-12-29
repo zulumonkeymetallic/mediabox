@@ -690,3 +690,4 @@ services:
       - PGID=1000
       - HOMEBRIDGE_CONFIG_UI=1
       - HOMEBRIDGE_CONFIG_UI_PORT=8501
+-
