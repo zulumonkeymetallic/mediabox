@@ -673,3 +673,21 @@ services:
         - TZ=${TZ}
     volumes:
         - '/var/run/docker.sock:/var/run/docker.sock'
+  # ----------------------------------------
+  # Added Home Bridge support
+  # ----------------------------------------
+  homebridge:
+    image: oznu/homebridge
+    container_name: homebridge
+    restart: unless-stopped
+    network_mode: host
+    ports:
+      - '${IP_ADDRESS}:8500
+    volumes:
+      - /srv/HomeBridge:/homebridge
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - HOMEBRIDGE_CONFIG_UI=1
+      - HOMEBRIDGE_CONFIG_UI_PORT=8501
+-
