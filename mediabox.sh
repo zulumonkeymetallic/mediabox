@@ -6,12 +6,10 @@ if [ "$EUID" -eq 0 ]
   exit
 fi
 
-getent passwd plex > /dev/null 2&>1
-
-if [ $? -eq 0 ]; then
-    echo "yes the user plex user exists"
+if id "$1000" &>/dev/null; then
+    echo 'user found'
 else
-    echo "No, the plex user does not exist"
+    echo 'user not found'
 fi
 
 # set -x
