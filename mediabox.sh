@@ -6,6 +6,14 @@ if [ "$EUID" -eq 0 ]
   exit
 fi
 
+getent passwd plex > /dev/null 2&>1
+
+if [ $? -eq 0 ]; then
+    echo "yes the user plex user exists"
+else
+    echo "No, the plex user does not exist"
+fi
+
 # set -x
 
 # See if we need to check GIT for updates
@@ -46,17 +54,6 @@ if [ -e .env ]; then
     # Run exec mediabox.sh if mediabox.sh changed
     check_run mediabox.sh "exec ./mediabox.sh"
 fi
-
-if id -u "$1000" >/dev/null 2>&1; then
-  echo "plex user exists"
-else
-  echo "plex user does not exist adding user"
-  sudo useradd -m plex -u 1000 -g 1000
-  sudo echo castleredTuesday6! | passwd plex --stdin
-fi
-
-
-
 
 # After update collect some current known variables
 if [ -e 1.env ]; then
