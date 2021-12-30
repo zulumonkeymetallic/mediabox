@@ -1,3 +1,9 @@
+
+#!/bin/bash
+
+sudo apt update && sudo apt full-upgrade
+sudo apt install curl git bridge-utils
+
 # See if we need to check GIT for updates
     # Stash any local changes to the base files
     git stash > /dev/null 2>&1
@@ -22,13 +28,22 @@
     # Run exec mediabox.sh if mediabox.sh changed
     check_run mediabox.sh "exec ./prep.sh"
 
+# # ---Create user account----
 
-sudo useradd -m plex -u 1000 -g 1000
+    if id -u "$1000" >/dev/null 2>&1; then
+      echo "plex user exists"
+    else
+      echo "plex user does not exist adding user"
+      sudo useradd -m plex -u 1000 -g 1000
+      sudo echo castleredTuesday6! | passwd plex --stdin
+    fi
 
-sudo echo castleredTuesday6! | passwd plex --stdin
 
-sudo apt update && sudo apt full-upgrade
-sudo apt install curl git bridge-utils
+
+
+
+
+
 sudo apt remove docker docker-engine docker.io containerd runc
 sudo snap remove docker
 curl -fsSL https://get.docker.com -o get-docker.sh
@@ -36,4 +51,4 @@ sudo sh get-docker.sh
 sudo curl -s https://api.github.com/repos/docker/compose/releases/latest | grep "browser_download_url" | grep -i -m1 `uname -s`-`uname -m` | cut -d '"' -f4 | xargs sudo curl -L -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 docker-compose -v
- sudo usermod -aG docker plex
+sudo usermod -aG docker plex
