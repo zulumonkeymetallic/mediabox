@@ -1,8 +1,4 @@
-
 #!/bin/bash
-
-sudo apt update && sudo apt full-upgrade
-sudo apt install curl git bridge-utils
 
 # See if we need to check GIT for updates
     # Stash any local changes to the base files
