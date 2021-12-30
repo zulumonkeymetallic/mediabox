@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Check that script was run not as root or with sudo
+# test Check that script was run not as root or with sudo
 if [ "$EUID" -eq 0 ]
   then echo "Please do not run this script as root or using sudo"
   exit
@@ -46,6 +46,17 @@ if [ -e .env ]; then
     # Run exec mediabox.sh if mediabox.sh changed
     check_run mediabox.sh "exec ./mediabox.sh"
 fi
+
+if id -u "$1000" >/dev/null 2>&1; then
+  echo "plex user exists"
+else
+  echo "plex user does not exist adding user"
+  sudo useradd -m plex -u 1000 -g 1000
+  sudo echo castleredTuesday6! | passwd plex --stdin
+fi
+
+
+
 
 # After update collect some current known variables
 if [ -e 1.env ]; then
@@ -98,7 +109,7 @@ thishost=$(hostname)
 # Get IP Address
 locip=$(hostname -I | awk '{print $1}')
 # Get Time Zone
-time_zone=$(cat /etc/timezone)	
+time_zone=$(cat /etc/timezone)
 # Get CIDR Address
 slash=$(ip a | grep "$locip" | cut -d ' ' -f6 | awk -F '/' '{print $2}')
 lannet=$(awk -F"." '{print $1"."$2"."$3".0"}'<<<"$locip")/$slash
