@@ -7,8 +7,6 @@ if [ "$EUID" -eq 0 ]
 fi
 
 
-# set -x
-
 # See if we need to check GIT for updates
 if [ -e .env ]; then
     # Check for Updated Docker-Compose
