@@ -46,8 +46,8 @@ if [ -e .env ]; then
     check_run mediabox.sh "exec ./mediabox.sh"
 fi
 
-# Check User and create if needed12
-if id "$1000" &>/dev/null; then
+# Check User and create if needed121
+if id "$1500" &>/dev/null; then
     echo 'user found'
 else
     echo 'user not found'
